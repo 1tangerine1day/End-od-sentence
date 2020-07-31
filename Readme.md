@@ -14,8 +14,6 @@ Over the growing season when we account for seasonally variable light inhibition
 
 ## model
 
-'''python
-
     class LSTMTagger(nn.Module):
 
         def __init__(self, embedding_dim, hidden_dim, vocab_size, tagset_size):
@@ -35,5 +33,6 @@ Over the growing season when we account for seasonally variable light inhibition
             lstm_out, _ = self.lstm( embeds.view(len(sentence), 1, -1), self.hidden)
             tag_space = self.hidden2tag(lstm_out.view(len(sentence), -1))
             tag_scores = F.log_softmax(tag_space,dim=1)
-            return tag_scores
-'''
+
+## Data
+crawler from : https://pubmed.ncbi.nlm.nih.gov/
